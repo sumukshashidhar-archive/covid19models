@@ -23,6 +23,7 @@ the modelling formula used here is:
 
 """
 
+import matplotlib.pyplot as plt
 
 class Coronavirus:
     def __init__(self, init_day, E, p):
@@ -44,7 +45,13 @@ class Coronavirus:
 
 
 c = Coronavirus(1, 25, 0.6)
-print(c.ddaytime(1000000000))
+y = c.ddaytime(1_000_000_000)
+x = [a for a in range(1, len(y)+1)]
+print(x, y)
+plt.plot(x, y)
+plt.show()
+
+
 
 
 
